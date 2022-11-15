@@ -15,8 +15,8 @@ public class timeManager : MonoBehaviour
     private float timer;
     void Start()
     {
-        Minute = 0;
-        Hour = 12;
+        Minute = 59;
+        Hour = 11;
         timer = minuteToRealTime;
     }
     
