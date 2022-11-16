@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ground
+    uniqueID: 3434709269
+    locked: 0
+  - name: decorations
+    uniqueID: 2526059859
+    locked: 0
+  - name: obstacles
+    uniqueID: 3661682941
+    locked: 0
+  - name: people
+    uniqueID: 3409080093
+    locked: 0
+  - name: gui
+    uniqueID: 3966603353
+    locked: 0
