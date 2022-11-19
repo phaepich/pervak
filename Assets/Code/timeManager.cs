@@ -5,36 +5,36 @@ using System;
 using System.Transactions;
 using UnityEngine.UIElements;
 
-public class timeManager : MonoBehaviour
-{
-    public static Action OnMinuteChanged;
-    public static Action OnHourChanged;
-    public static int Minute { get; private set; }
-    public static int Hour { get; private set; }
-    private float minuteToRealTime = 1f;
-    private float timer;
-    void Start()
+    public class timeManager : MonoBehaviour
     {
-        Minute = 59;
-        Hour = 11;
-        timer = minuteToRealTime;
-    }
-    
-    void Update()
-    {
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        public static Action OnMinuteChanged;
+        public static Action OnHourChanged;
+        public static int Minute { get; private set; }
+        public static int Hour { get; private set; }
+        private float minuteToRealTime = 1f;
+        private float timer;
+        void Start()
         {
-            Minute++;
-            OnMinuteChanged?.Invoke();
-            if (Minute >= 60)
-            {
-                Hour++;
-                Minute = 0;
-                OnHourChanged?.Invoke();
-            }
-
+            Minute = 59;
+            Hour = 11;
             timer = minuteToRealTime;
         }
+        
+        void Update()
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                Minute++;
+                OnMinuteChanged?.Invoke();
+                if (Minute >= 60)
+                {
+                    Hour++;
+                    Minute = 0;
+                    OnHourChanged?.Invoke();
+                }
+
+                timer = minuteToRealTime;
+            }
+        }
     }
-}
