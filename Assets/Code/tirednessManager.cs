@@ -7,13 +7,15 @@ using UnityEngine.UIElements;
 
 public class tirednessManager : MonoBehaviour
 {
+    public static float tiredness { get; private set; }
     void Start()
     {
-
+        tiredness = 100f;
     }
     
     void Update()
     {
-        
+        tiredness -= 1f;
+        timeManager.OnMinuteChanged?.Invoke();
     }
 }

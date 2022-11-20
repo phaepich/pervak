@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class tirednessUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI tirednessText;
+
+    private void OnEnable()
     {
-        
+        timeManager.OnMinuteChanged += UpdateTime;
+        timeManager.OnHourChanged += UpdateTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        timeManager.OnMinuteChanged -= UpdateTime;
+        timeManager.OnHourChanged -= UpdateTime;
+    }
+
+    private void UpdateTime()
+    {
+        tirednessText.text = $"{tirednessManager.tiredness}";
     }
 }

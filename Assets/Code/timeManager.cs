@@ -12,7 +12,7 @@ using UnityEngine.UIElements;
         public static int Minute { get; private set; }
         public static int Hour { get; private set; }
         private float minuteToRealTime = 1f;
-        private float timer;
+        public float timer;
         void Start()
         {
             Minute = 59;
