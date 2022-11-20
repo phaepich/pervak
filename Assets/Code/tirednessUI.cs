@@ -21,6 +21,6 @@ public class tirednessUI : MonoBehaviour
 
     private void UpdateTime()
     {
-        tirednessText.text = $"{tirednessManager.tiredness}";
+        tirednessText.text = $"{tirednessManager.tiredness}%";
     }
 }

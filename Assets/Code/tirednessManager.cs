@@ -10,12 +10,15 @@ public class tirednessManager : MonoBehaviour
     public static float tiredness { get; private set; }
     void Start()
     {
-        tiredness = 100f;
+        tiredness = 0f;
     }
     
     void Update()
     {
-        tiredness -= 1f;
+        while (tiredness != 100)
+        {
+            tiredness += Time.deltaTime * 4;
+        }
         timeManager.OnMinuteChanged?.Invoke();
     }
 }
