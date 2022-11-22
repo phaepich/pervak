@@ -15,10 +15,7 @@ public class tirednessManager : MonoBehaviour
     
     void Update()
     {
-        while (tiredness != 100)
-        {
-            tiredness += Time.deltaTime * 4;
-        }
-        timeManager.OnMinuteChanged?.Invoke();
+        tiredness += Time.deltaTime * 4;
+        
     }
 }
